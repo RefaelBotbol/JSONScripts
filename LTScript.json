@@ -4,6 +4,12 @@
     "duration": 45,
     "rps": 100
   },
+  "rps_step_up": {
+      "start_rps": 10,
+      "end_rps": 100,
+      "step_increment": 50,
+      "step_duration": 1
+    },
   "thresholds": {
     "avg_resp_time": 1000,
     "max_resp_time": 10000,
