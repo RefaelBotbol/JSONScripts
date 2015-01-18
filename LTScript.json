@@ -1,20 +1,45 @@
 {
   "test": {
-    "name": "Simple JSON Test",
-    "location": "eu-west-1",
-    "duration": 1,
-    "rps": 400,
-    "rps_step_up": {
-      "start_rps": 5,
-      "end_rps": 200,
-      "step_increment": 20,
+    "name": "Games Load Test",
+    "duration": 45,
+    "rps": 100
+  },
+  "rps_step_up": {
+      "start_rps": 10,
+      "end_rps": 100,
+      "step_increment": 50,
       "step_duration": 1
     },
-    "urls": [
-      {
-        "url": "http://blazedemo.com",
-        "method": "GET"
+  "thresholds": {
+    "avg_resp_time": 1000,
+    "max_resp_time": 10000,
+    "avg_latency": 10000,
+    "error_rate": 0.5,
+    "resp_time_pctl": {
+      "pctl": 99,
+      "resp_time": 10000
+    }
+  },
+  "urls": [
+    {
+      "url": "http://blazedemo.com/D_o_o_m",
+      "headers": {
+        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) Chrome/34.0.1847.116"
+      },
+      "body":"Go ahead and leave. See if I care.",
+      "thresholds": {
+        "90_pctl_resp_time": 2000
       }
-    ]
-  }
+    },
+    {
+      "url": "http://blazedemo.com/Alert_On_Red",
+      "method":"POST",
+      "body":"Kirov Reporting﻿ !"
+     },
+    {
+      "url": "http://blazedemo.com/The_Craft_Of_War",
+      "method":"POST",
+      "body":"My life for the Horde!"
+    }
+  ]
 }
