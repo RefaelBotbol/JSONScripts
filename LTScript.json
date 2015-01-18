@@ -2,7 +2,7 @@
   "test": {
     "name": "Games Load Test",
     "duration": 45,
-    "rps": 1
+    "rps": 100
   },
   "thresholds": {
     "avg_resp_time": 1000,
@@ -24,7 +24,16 @@
       "thresholds": {
         "90_pctl_resp_time": 2000
       }
+    },
+    {
+      "url": "http://blazedemo.com/Alert_On_Red",
+      "method":"POST",
+      "body":"Kirov Reporting﻿ !"
+     },
+    {
+      "url": "http://blazedemo.com/The_Craft_Of_War",
+      "method":"POST",
+      "body":"My life for the Horde!"
     }
-    
   ]
 }
