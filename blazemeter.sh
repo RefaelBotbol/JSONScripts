@@ -1,6 +1,6 @@
 #!/bin/bash
 export BZA=https://a.blazemeter.com:443
-export BZA_API_KEY=7897f09ad9a35de753d6
+export BZA_API_KEY=789
 export FILE=myscript.json
 
 if [ "x$1" == "x" ] ; then
