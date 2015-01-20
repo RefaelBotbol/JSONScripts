@@ -1,45 +1,94 @@
-{
-  "test": {
-    "name": "Games Load Test",
-    "duration": 45,
-    "rps": 100
-  },
-  "rps_step_up": {
-      "start_rps": 10,
-      "end_rps": 100,
-      "step_increment": 50,
-      "step_duration": 1
-    },
-  "thresholds": {
-    "avg_resp_time": 1000,
-    "max_resp_time": 10000,
-    "avg_latency": 10000,
-    "error_rate": 0.5,
-    "resp_time_pctl": {
-      "pctl": 99,
-      "resp_time": 10000
-    }
-  },
-  "urls": [
-    {
-      "url": "http://blazedemo.com/D_o_o_m",
-      "headers": {
-        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) Chrome/34.0.1847.116"
+{  
+   "name":"Games Load Test",
+   "configuration":{  
+      "enginesSize":"m3.large",
+      "plugins":{  
+         "throughputController":{  
+            "loadProfile":{  
+               "duration":60,
+               "start":5,
+               "step":10,
+               "end":50
+            },
+            "throughput":50
+         },
+         "thresholds":{  
+            "thresholds":[  
+               {  
+                  "field":"responseTime.avg",
+                  "op":"lt",
+                  "description":"avg_resp_time",
+                  "value":1000,
+                  "label":null
+               },
+               {  
+                  "field":"responseTime.max",
+                  "op":"lt",
+                  "description":"max_resp_time",
+                  "value":10000,
+                  "label":"http://demo.a.blazemeter.com/echo.php?url=1"
+               }
+            ]
+         },
+         "http":{  
+            "override":{  
+               "duration":"10",
+               "threads":6
+            },
+            "settings":{  
+               "managers":{  
+                  "CookieManager":{  
+                     "enabled":false
+                  },
+                  "HeaderManager":{  
+                     "enabled":false
+                  },
+                  "CacheManager":{  
+                     "enabled":false
+                  }
+               }
+            },
+            "pages":[  
+               {  
+                  "headers":[  
+                  ],
+                  "order":0,
+                  "data":"",
+                  "label":"D00M",
+                  "type":"GET",
+                  "url":"http://blazedemo.com/D_o_o_m"
+               },
+               {  
+                  "headers":[  
+
+                  ],
+                  "order":1,
+                  "data":"",
+                  "label":"AlertIsRed",
+                  "type":"GET",
+                  "url":"http://blazedemo.com/Alert_Is_Red"
+               },
+               {  
+                  "headers":[  
+
+                  ],
+                  "order":2,
+                  "data":"",
+                  "label":"TheCraftOfWar",
+                  "type":"GET",
+                  "url":"http://blazedemo.com/The_Craft_Of_War"
+               }
+            ]
+         },
+         "globalHeaders":{  
+            "headers":{  
+               "X-Custom-Header":"blazemeter header value"
+            }
+         }
       },
-      "body":"Go ahead and leave. See if I care.",
-      "thresholds": {
-        "90_pctl_resp_time": 2000
-      }
-    },
-    {
-      "url": "http://blazedemo.com/Alert_On_Red",
-      "method":"POST",
-      "body":"Kirov Reporting!"
-     },
-    {
-      "url": "http://blazedemo.com/The_Craft_Of_War",
-      "method":"POST",
-      "body":"My life for the Horde!"
-    }
-  ]
+      "location":"us-central1-a",
+      "serversCount":0,
+      "consoleSize":"m3.large",
+      "type":"http"
+   }
 }
