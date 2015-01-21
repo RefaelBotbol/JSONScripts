@@ -5,7 +5,7 @@
    "duration": 45, 
    "rps": 75, 
    "rps_step_up": { "start_rps": 5, "end_rps": 75, "step_increment": 10, "step_duration": 10 }, 
-   "thresholds": { "avg_resp_time": 1000 }, 
+   "thresholds": { "avg_resp_time": 10000 }, 
    "common-login-id": 1, 
    "urls": [ 
       { 
