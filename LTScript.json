@@ -6,7 +6,6 @@
    "rps": 75, 
    "rps_step_up": { "start_rps": 5, "end_rps": 75, "step_increment": 10, "step_duration": 10 }, 
    "thresholds": { "avg_resp_time": 12000 }, 
-   "common-login-id": 1, 
    "urls": [ 
       { 
          "url": "http://blazedemo.com/D_o_o_m",
@@ -14,11 +13,12 @@
          "headers": {  
             "User-Agent": "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.116 Safari/537.36" 
           }, 
-         "thresholds": { "max_resp_time": 7000 }
+         "body":"Go ahead and leave. See if I care."
       }, 
       { 
          "url": "http://blazedemo.com/Alert_On_Red",
          "method":"POST",
+         "body":"Kirov Reporting!",
          "headers": { "Accept-Charset": "ISO-8859-1" } 
       }, 
       { 
