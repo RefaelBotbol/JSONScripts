@@ -1,11 +1,11 @@
 { "test": 
    { 
-   "name": "Games Load Test",
+   "name": "Games Load Test5",
    "location": "us-central1-a",
    "duration": 45, 
    "rps": 75, 
    "rps_step_up": { "start_rps": 5, "end_rps": 75, "step_increment": 10, "step_duration": 10 }, 
-   "thresholds": { "avg_resp_time": 10000 }, 
+   "thresholds": { "avg_resp_time": 20000 }, 
    "urls": [ 
       { 
          "url": "http://blazedemo.com/D_o_o_m",
@@ -14,7 +14,7 @@
             "User-Agent": "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.116 Safari/537.36" 
           }, 
          "body":"Go ahead and leave. See if I care.",
-         "thresholds": { "max_resp_time": 9000 }
+         "thresholds": { "max_resp_time": 10000 }
       }, 
       { 
          "url": "http://blazedemo.com/Alert_On_Red",
