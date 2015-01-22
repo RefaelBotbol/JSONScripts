@@ -13,7 +13,8 @@
          "headers": {  
             "User-Agent": "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.116 Safari/537.36" 
           }, 
-         "body":"Go ahead and leave. See if I care."
+         "body":"Go ahead and leave. See if I care.",
+         "thresholds": { "max_resp_time": 7000 }
       }, 
       { 
          "url": "http://blazedemo.com/Alert_On_Red",
